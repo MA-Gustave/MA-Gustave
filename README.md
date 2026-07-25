@@ -12,10 +12,10 @@
 
 ## Systems
 
-- **GF RGL AI Compendium**  
+- **[GF RGL AI Compendium](https://github.com/MA-Gustave/GF_RGL_AI_Compendium)**  
   Structured knowledge, provenance, contracts, and workflows for Grammatical Framework and RGL language engineering.
 
-- **GF Wordbench**  
+- **[GF Wordbench](https://github.com/MA-Gustave/GF_Wordbench)**  
   Validation, diagnostics, regression testing, and preserved evidence for active GF language projects.
 
 - **[GF Observatory](https://github.com/MA-Gustave/GF_Observatory)**  
