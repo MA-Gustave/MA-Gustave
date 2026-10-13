@@ -6,7 +6,7 @@
   />
 </p>
 
-<h1 align="center">Gustave Leblanc · Abstract Mechanisms</h1>
+<h1 align="center">Gustave · Abstract Mechanisms</h1>
 
 <p align="center">
   <sub>Software systems · language engineering · experimental RISC-V development · AI-orchestrated research</sub>
