@@ -1,50 +1,80 @@
-<p align="center">
-  <img
-    src="./assets/LogoMA.png"
-    alt="Mécanismes Abstraits par Gustave — Abstract Mechanisms"
-    width="760"
-  />
-</p>
+<img src="assets/abstract-mechanisms-mark.png" alt="Abstract Mechanisms mark" width="48" />
 
-<h1 align="center">Gustave · Abstract Mechanisms</h1>
+# AI-Orchestrated Experimental Development
 
-<p align="center">
-  <sub>Software systems · language engineering · experimental RISC-V development · AI-orchestrated research</sub>
-</p>
+**Beyond writing code: automation, higher-level abstraction, and experimentally grounded software development.**
 
-I develop independent software and research projects with an emphasis on reproducible workflows, technical documentation, source provenance, and explicit boundaries between demonstrated results and open questions.
+**A research manuscript and open documentation project by Gustave · Abstract Mechanisms.**  
+**Status:** working manuscript / public research notes · **13 October 2026** · **not peer reviewed**.
 
-## AI-orchestrated research and RISC-V systems
+> **Central proposition.** When technical operations become sufficiently reliable and automated, human work can shift toward the design, coordination and assessment of higher-level systems. Generative AI may extend this shift from compilation and model transformation to implementation, experiment construction and evidence analysis. This does *not* mean that code, programmers, or low-level expertise have become unnecessary.
 
-- **[AI-Orchestrated Experimental Development](https://github.com/MA-Gustave/AI-Orchestrated-Experimental-Development)**  
-  An evolving research manuscript and public methodology for AI-assisted software experimentation: hypotheses, implementation candidates, correctness checks, measurements, evidence, and revision. **Working research, not peer reviewed.**
+The central contribution is **not a record JSON parsing speedup**. This repository examines a method for directing low-level technical research through AI-assisted implementation, an extensible library of optimization patterns, experimental campaigns, retained negative results, and iterative reports. [RVV-VLA-Lab](https://github.com/MA-Gustave/RVV-VLA-Lab) is the case study, not the identity of this repository.
 
-- **[RVV-VLA Lab](https://github.com/MA-Gustave/RVV-VLA-Lab)**  
-  Experimental RISC-V Vector Extension (RVV), vector-length-agnostic parsing systems, test orchestration, benchmark protocols, and recorded research evidence. Results are specific to the documented source, workloads, toolchains, and hardware—not universal speedup claims.
+## Start reading
 
-- **[simdjson-rvv-vla](https://github.com/MA-Gustave/Simdjson-rvv-vla/tree/feature/rvv-vla-v5)**  
-  An **independent experimental fork** extending the original [simdjson](https://github.com/simdjson/simdjson) software with RVV-VLA development and integration. The v5.0.3 migration identifies native RVV correctness verification still to be completed; see its [migration status](https://github.com/MA-Gustave/Simdjson-rvv-vla/blob/feature/rvv-vla-v5/RVV_V5_MIGRATION_STATUS.md).
+| Resource | What it covers |
+| --- | --- |
+| **[Full research manuscript](manuscript/ARTICLE_EN.md)** | Main argument, literature, case study, hypotheses, limitations |
+| [Abstract](manuscript/ABSTRACT_EN.md) | Concise overview for readers and prospective reviewers |
+| [Research thesis and scope](docs/THESIS_AND_SCOPE.md) | What is proposed, observed, and not demonstrated |
+| [Conceptual framework](docs/CONCEPTUAL_FRAMEWORK.md) | Aristotle, Simon, Licklider, Engelbart, automation |
+| [Public research method](docs/PUBLIC_METHOD.md) | Patterns → candidate plans → experiments → reports → revision |
+| [RVV-VLA case study](docs/RVV_VLA_CASE_STUDY.md) | Primary results, provenance and limitations |
+| [Evidence ledger](docs/EVIDENCE_LEDGER.md) | Claims, source links, evidence category and caveats |
+| [JSON workload metadata hypothesis](docs/JSON_METADATA_HYPOTHESIS.md) | Optional hints for workload-aware engine choice |
+| [Research questions](docs/RESEARCH_QUESTIONS.md) | Falsifiable hypotheses and evaluation plans |
+| [Annotated references](references/REFERENCES.md) / [BibTeX](references/references.bib) | Academic foundations and related work |
+| [GitHub Wiki](https://github.com/MA-Gustave/AI-Orchestrated-Experimental-Development/wiki) / [Wiki source](wiki/Home.md) / [Publishing instructions](docs/WIKI_PUBLISHING.md) | English research wiki with compact Abstract Mechanisms logo |
+| [Publication checklist](docs/PRE_PUBLICATION_CHECKLIST.md) | Checks before a DOI, preprint or conference submission |
+| **[Publish at MA-Gustave on GitHub](docs/PUBLISH_TO_GITHUB.md)** | GitHub CLI / Git instructions, separate Wiki deployment |
 
-## Language engineering systems
+## Working model
 
-- **[GF RGL AI Compendium](https://github.com/MA-Gustave/GF_RGL_AI_Compendium)**  
-  Structured knowledge, provenance, contracts, and workflows for Grammatical Framework and RGL language engineering.
+```mermaid
+flowchart LR
+  A[Human objectives and constraints] --> B[AI-assisted pattern library]
+  B --> C[Candidate configurations]
+  C --> D[Native tests and measurement]
+  D --> E[Evidence and reports]
+  E --> F{Revise the research plan?}
+  F -->|Yes| B
+  F -->|Confirm| G[Held-out replication]
+```
 
-- **[GF Wordbench](https://github.com/MA-Gustave/GF_Wordbench)**  
-  Validation, diagnostics, regression testing, and preserved evidence for active GF language projects.
+The current RVV-VLA E00–E14 set consists of **15 fixed experimental configurations**. It is *not* an autonomous, continuously self-tuning search system. Hypothesis generation and reporting can involve AI; benchmark validity remains a matter of tests, source provenance and human accountability.
 
-- **[GF Observatory](https://github.com/MA-Gustave/GF_Observatory)**  
-  Historical views of project maturity, readiness, and health from versioned evidence.
+## Primary repositories and dataset provenance
 
-- **[Ars Magna Lulli](https://github.com/MA-Gustave/Ars-Magna-Lulli)**  
-  A monorepo connecting the Compendium, Wordbench, and Observatory.
+- [MA-Gustave/RVV-VLA-Lab](https://github.com/MA-Gustave/RVV-VLA-Lab) — integrated engine, pattern library, experiment orchestration, public evidence and validation scripts.
+- [MA-Gustave/Simdjson-rvv-vla](https://github.com/MA-Gustave/Simdjson-rvv-vla) — independent experimental RVV-VLA backend development.
+- [15 E00–E14 candidate plans](https://github.com/MA-Gustave/RVV-VLA-Lab/blob/main/experiments/PATTERN_LIBRARY.md).
+- [Stage 1 / Stage 2 / DOM study](https://github.com/MA-Gustave/RVV-VLA-Lab/blob/main/docs/results/2026-10-11-stage-profile-8h.md).
+- [Measurement methodology](https://github.com/MA-Gustave/RVV-VLA-Lab/blob/main/docs/METHODOLOGY.md).
 
-## Attribution and independence
+**Reported, not independently replicated here:** the 11 October 2026 native campaign reports 6,887 measurements and paired geometric-mean ratios for E14 versus official VLS256 of **1.502× DOM**, **1.601× Stage 1**, **1.298× Stage 2**. A substantial Stage 1 regression is also documented for heavily escaped strings. These are workload- and machine-specific values, not universal improvements. The historical source was a modified working tree: the upstream commit SHA alone cannot reconstruct the precise measured code. See the [evidence ledger](docs/EVIDENCE_LEDGER.md).
 
-The original **simdjson** project, its authors, contributors, licences, and publications remain distinct from my experimental RVV-VLA work. My fork is **not** an official simdjson release and does **not** imply upstream endorsement, acceptance, or validation. I am not submitting this experimental work for upstream review or asking the original maintainers to validate, debug, repair, integrate, or maintain it.
+## Four different claim types
 
-My research process is described in [AI-Orchestrated Experimental Development](https://github.com/MA-Gustave/AI-Orchestrated-Experimental-Development). Its published evidence and limitations should be consulted before interpreting technical or performance claims. See the fork's [scope and provenance statement](https://github.com/MA-Gustave/Simdjson-rvv-vla/blob/feature/rvv-vla-v5/FORK_SCOPE.md) for responsibility and attribution boundaries.
+- **Documented observation:** a claim traceable to project data, version identifiers or primary sources; not necessarily independently replicated.
+- **Conceptual interpretation:** a philosophical comparison, not empirical proof.
+- **Publicly described method:** the parts of the workflow disclosed in sufficient detail to interpret the case study.
+- **Research hypothesis:** a proposed mechanism requiring a prospective test, such as out-of-band workload metadata for JSON parsing.
 
-<p align="center">
-  <sub>Project-specific documentation, licensing, validation status, and technical evidence are maintained in the respective repositories.</sub>
-</p>
+This repository does not claim priority for algorithm selection, program synthesis, autotuning, or hierarchical theories of complexity. Relevant prior work is cited explicitly.
+
+## Why a separate repository?
+
+A scientific argument requires a stable place for its text, references, corrections and review history. The engine and laboratory repositories are primary technical evidence. This repository is the *interpretation and publication layer*: a research article, its methods, and its bibliographic trail.
+
+## Author identity, confidentiality and citation
+
+**Public project attribution:** Gustave, under the *Abstract Mechanisms* research identity. Formal publication names, potential coauthors, ORCID, DOI and licensing of the original written material require deliberate confirmation. [Citation template](CITATION.cff.example) is not an assertion of a legal name or DOI. Keep original simdjson copyright and licence notices intact and distinguish upstream work from RVV-VLA changes.
+
+Internal prompts and private orchestration procedures are **not included**. This is compatible with a public conceptual paper only insofar as claims that demand reproducibility rely on disclosed experiments, measurements and code; no hidden process is offered as uncheckable evidence of superiority. See [Research integrity](docs/ATTRIBUTION_AND_PRIVACY.md).
+
+## Wiki and publication status
+
+The `wiki/` directory contains actual English wiki pages and serves as their auditable mirror. **GitHub does not turn this directory into the live Wiki automatically.** Once the main repository exists and its Wiki is initialized, publish the supplied pages using [the wiki instructions](docs/WIKI_PUBLISHING.md) and [PowerShell publishing script](scripts/publish-wiki.ps1). Repository: **[MA-Gustave/AI-Orchestrated-Experimental-Development](https://github.com/MA-Gustave/AI-Orchestrated-Experimental-Development)**. The GitHub Wiki is maintained separately at the corresponding `/wiki` URL.
+
+<p align="center"><sub>ABSTRACT MECHANISMS · by Gustave · Ideas made operational.</sub></p>
