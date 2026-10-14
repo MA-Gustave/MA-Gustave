@@ -1,4 +1,4 @@
-<img src="assets/abstract-mechanisms-mark.png" alt="Abstract Mechanisms mark" width="48" />
+<img src="assets/abstract-mechanisms-mark.svg" alt="Abstract Mechanisms mark" width="48" />
 
 # AI-Orchestrated Experimental Development
 
@@ -9,7 +9,7 @@
 
 > **Central proposition.** When technical operations become sufficiently reliable and automated, human work can shift toward the design, coordination and assessment of higher-level systems. Generative AI may extend this shift from compilation and model transformation to implementation, experiment construction and evidence analysis. This does *not* mean that code, programmers, or low-level expertise have become unnecessary.
 
-The central contribution is **not a record JSON parsing speedup**. This repository examines a method for directing low-level technical research through AI-assisted implementation, an extensible library of optimization patterns, experimental campaigns, retained negative results, and iterative reports. [RVV-VLA-Lab](https://github.com/MA-Gustave/RVV-VLA-Lab) is the case study, not the identity of this repository.
+The central contribution is **not a record JSON parsing speedup**. This repository examines a method for directing low-level technical research through AI-assisted implementation, an extensible library of optimization patterns, experimental campaigns, retained negative results, and iterative reports. [VLA-MethodLab](https://github.com/MA-Gustave/VLA-MethodLab) provides the experimental case study, while [VectorPath-RVV](https://github.com/MA-Gustave/VectorPath-RVV) is the resulting RVV-VLA engine. Neither is the identity of this manuscript repository.
 
 ## Start reading
 
@@ -46,13 +46,13 @@ The current RVV-VLA E00–E14 set consists of **15 fixed experimental configurat
 
 ## Primary repositories and dataset provenance
 
-- [MA-Gustave/RVV-VLA-Lab](https://github.com/MA-Gustave/RVV-VLA-Lab) — integrated engine, pattern library, experiment orchestration, public evidence and validation scripts.
-- [MA-Gustave/Simdjson-rvv-vla](https://github.com/MA-Gustave/Simdjson-rvv-vla) — independent experimental RVV-VLA backend development.
-- [15 E00–E14 candidate plans](https://github.com/MA-Gustave/RVV-VLA-Lab/blob/main/experiments/PATTERN_LIBRARY.md).
-- [Stage 1 / Stage 2 / DOM study](https://github.com/MA-Gustave/RVV-VLA-Lab/blob/main/docs/results/2026-10-11-stage-profile-8h.md).
-- [Measurement methodology](https://github.com/MA-Gustave/RVV-VLA-Lab/blob/main/docs/METHODOLOGY.md).
+- **[VLA-MethodLab](https://github.com/MA-Gustave/VLA-MethodLab)** — the experimental method and testing framework: pattern library, candidate configurations, orchestration, measurements, validation scripts and research evidence.
+- **[VectorPath-RVV](https://github.com/MA-Gustave/VectorPath-RVV)** — the optimized RISC-V Vector (RVV-VLA) JSON engine and implementation developed and evaluated through the laboratory, based on simdjson. See its [technical overview](https://github.com/MA-Gustave/VectorPath-RVV/blob/main/README.md) and [performance notes](https://github.com/MA-Gustave/VectorPath-RVV/blob/main/PERFORMANCE.md).
+- [15 E00–E14 candidate plans](https://github.com/MA-Gustave/VLA-MethodLab/blob/main/experiments/PATTERN_LIBRARY.md) — experimental design in VLA-MethodLab.
+- [Stage 1 / Stage 2 / DOM study](https://github.com/MA-Gustave/VLA-MethodLab/blob/main/docs/results/2026-10-11-stage-profile-8h.md) — archived measurements and limitations.
+- [Measurement methodology](https://github.com/MA-Gustave/VLA-MethodLab/blob/main/docs/METHODOLOGY.md) — testing and evidence standards.
 
-**Reported, not independently replicated here:** the 11 October 2026 native campaign reports 6,887 measurements and paired geometric-mean ratios for E14 versus official VLS256 of **1.502× DOM**, **1.601× Stage 1**, **1.298× Stage 2**. A substantial Stage 1 regression is also documented for heavily escaped strings. These are workload- and machine-specific values, not universal improvements. The historical source was a modified working tree: the upstream commit SHA alone cannot reconstruct the precise measured code. See the [evidence ledger](docs/EVIDENCE_LEDGER.md).
+**Reported, not independently replicated here:** the 11 October 2026 native campaign reports 6,887 measurements and paired geometric-mean ratios for E14 versus official VLS256 of **1.502× DOM**, **1.601× Stage 1**, **1.298× Stage 2**. A substantial Stage 1 regression is also documented for heavily escaped strings. These are workload- and machine-specific values, not universal improvements. The study predates the separation into VLA-MethodLab and VectorPath-RVV; their current repository heads should not be assumed to reproduce the exact measured working tree. The historical source was a modified working tree: the upstream commit SHA alone cannot reconstruct the precise measured code. See the [evidence ledger](docs/EVIDENCE_LEDGER.md).
 
 ## Four different claim types
 
@@ -65,7 +65,7 @@ This repository does not claim priority for algorithm selection, program synthes
 
 ## Why a separate repository?
 
-A scientific argument requires a stable place for its text, references, corrections and review history. The engine and laboratory repositories are primary technical evidence. This repository is the *interpretation and publication layer*: a research article, its methods, and its bibliographic trail.
+A scientific argument requires a stable place for its text, references, corrections and review history. [VLA-MethodLab](https://github.com/MA-Gustave/VLA-MethodLab) contains the experimental methodology and evidence; [VectorPath-RVV](https://github.com/MA-Gustave/VectorPath-RVV) contains the implementation studied. This repository is the *interpretation and publication layer*: a research article, its methods, and its bibliographic trail.
 
 ## Author identity, confidentiality and citation
 
