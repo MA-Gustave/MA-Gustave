@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/LogoMAG.gif" alt="Mécanismes Abstraits — par Gustave" width="230">
+  <img src="assets/LogoMAG.gif" alt="Mécanismes Abstraits — par Gustave" width="500">
 </p>
 
 <br><em>Des idées rendues opératoires. · Ideas made operational.</em></p>
