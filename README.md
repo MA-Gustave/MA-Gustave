@@ -2,8 +2,7 @@
   <img src="assets/LogoMAG.gif" alt="Mécanismes Abstraits — par Gustave" width="230">
 </p>
 
-<h1 align="center">MÉCANISMES ABSTRAITS</h1>
-<p align="center"><strong>par Gustave</strong><br><em>Des idées rendues opératoires. · Ideas made operational.</em></p>
+<br><em>Des idées rendues opératoires. · Ideas made operational.</em></p>
 
 **I build software where language, rules, AI-assisted implementation and rigorous verification meet.** My primary work is in computational linguistics with Grammatical Framework (GF) and its Resource Grammar Library (RGL). I also investigate what becomes possible when human-directed AI helps implement complex software systems.
 
