@@ -137,3 +137,32 @@ details p {font-size:1.0625rem;line-height:1.65;}
   .brand{gap:7px;}
   .brand-title{font-size:.96rem;}
 }
+
+/* 2026-10-19 · Official Mécanismes Abstraits brand in the masthead.
+   Uses the supplied transparent PNG with its empty margins trimmed; the
+   original graphic is preserved. Existing link labels remain accessible. */
+.brand {
+  display: block;
+  flex: 0 0 auto;
+  width: 252px;
+  height: 113px;
+  background-image: url("ma-header-logo.png");
+  background-position: left center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.brand > .brand-icon,
+.brand > span { display: none; }
+.header-inner { min-height: 119px; }
+@media (max-width: 1100px) {
+  .brand { width: 224px; height: 101px; }
+  .header-inner { min-height: 106px; }
+}
+@media (max-width: 690px) {
+  .brand { width: 192px; height: 87px; }
+  .header-inner { min-height: 92px; }
+}
+@media (max-width: 380px) {
+  .brand { width: 165px; height: 75px; }
+  .header-inner { min-height: 82px; }
+}
