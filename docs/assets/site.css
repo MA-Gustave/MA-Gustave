@@ -4,3 +4,136 @@ a{color:var(--blue);text-underline-offset:3px}a:hover{color:var(--red)}a:focus-v
 @media(max-width:960px){.container{width:min(var(--max),calc(100% - 44px))}.header-inner{min-height:70px}.main-nav{gap:11px}.nav-link{font-size:.64rem}.hero{padding:70px 0}.hero-grid{gap:28px}.hero h1{font-size:clamp(3rem,7vw,5.7rem)}.indexband{grid-template-columns:repeat(2,1fr)}.indexband a:nth-child(2){border-right:0}.indexband a:nth-child(-n+2){border-bottom:1px solid var(--line)}.grid-three{grid-template-columns:1fr 1fr}.mechanism-grid{grid-template-columns:1fr 1fr}.mech-step:nth-child(2){border-right:0}.mech-step:nth-child(-n+2){border-bottom:1px solid var(--line)}.mech-step:nth-child(2):after{display:none}.split-feature{gap:23px}}
 @media(max-width:690px){body{font-size:16px}.container{width:calc(100% - 34px)}.header-inner{min-height:67px;flex-wrap:wrap}.brand-title{font-size:1.12rem}.menu-btn{display:block;margin-left:auto}.main-nav{display:none;width:100%;flex-wrap:wrap;gap:14px 19px;padding:0 0 18px}.main-nav.open{display:flex}.nav-link{font-size:.72rem}.hero{padding:50px 0}.hero-grid,.grid-two,.grid-three,.split-feature,.stat-grid,.footer-grid{grid-template-columns:1fr}.hero h1{font-size:clamp(3.5rem,13vw,5.2rem)}.hero-art{height:auto;max-height:none}.section{padding:62px 0}.section-title{font-size:3rem}.stat-panel{padding:30px}.stat-grid{gap:18px}.stat strong{font-size:3.7rem}.mechanism-grid{grid-template-columns:1fr}.mech-step{border-bottom:1px solid var(--line);border-right:0}.mech-step:after{display:none}.mech-step:last-child{border-bottom:0}.row-detail{grid-template-columns:1fr;gap:9px}.page-hero{padding:62px 0 45px}.page-hero h1{font-size:clamp(2.8rem,11vw,3.8rem);overflow-wrap:anywhere}.section-title{overflow-wrap:anywhere}.footer-grid{gap:30px}.actions{gap:8px}.button{width:100%}.indexband a{padding:18px 12px}.indexband strong{font-size:1.12rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+
+/* Click-to-enlarge hero illustration. Preserves the earlier no-crop fix. */
+.hero-art-trigger{position:relative;display:block;width:100%;padding:0;margin:0;border:0;background:transparent;text-align:inherit;cursor:zoom-in}
+.hero-art-trigger .hero-art{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
+.hero-art-trigger::after{content:attr(data-hint);position:absolute;bottom:14px;right:14px;padding:8px 11px;color:#fff;background:rgba(22,28,30,.87);font:500 .69rem/1.2 var(--mono);letter-spacing:.02em;pointer-events:none;opacity:.88;transition:opacity .15s,background .15s}
+.hero-art-trigger:hover::after,.hero-art-trigger:focus-visible::after{opacity:1;background:var(--red)}
+.hero-art-trigger:focus-visible{outline:3px solid var(--red);outline-offset:4px}
+.hero-lightbox{box-sizing:border-box;width:min(96vw,1300px);max-width:none;max-height:96dvh;margin:auto;padding:18px;border:1px solid rgba(255,255,255,.25);background:#171c1e;color:#f5efe6;box-shadow:0 18px 65px rgba(0,0,0,.45);overflow:auto}
+.hero-lightbox::backdrop{background:rgba(12,16,18,.87)}
+.hero-lightbox-frame{display:flex;flex-direction:column;align-items:center;gap:12px;width:100%}
+.hero-lightbox-close{align-self:flex-end;display:flex;align-items:center;justify-content:center;flex:none;border:1px solid rgba(255,255,255,.5);border-radius:0;width:43px;height:43px;background:#242b2e;color:#fff;font:32px/1 var(--sans);cursor:pointer}
+.hero-lightbox-close:hover,.hero-lightbox-close:focus-visible{background:var(--red);border-color:var(--red)}
+.hero-lightbox-image{display:block;width:auto;height:auto;max-width:100%;max-height:calc(96dvh - 132px);object-fit:contain;border:1px solid rgba(255,255,255,.25)}
+.hero-lightbox-original{color:#f1ede4;text-decoration:underline;text-underline-offset:3px;font:.73rem/1.4 var(--mono);padding:4px 6px;text-align:center}
+.hero-lightbox-original:hover,.hero-lightbox-original:focus-visible{color:#ef7b61}
+@media(max-width:690px){.hero-lightbox{width:100vw;max-height:100dvh;padding:12px}.hero-lightbox-image{max-height:calc(100dvh - 121px)}.hero-lightbox-close{width:42px;height:42px}.hero-art-trigger::after{right:9px;bottom:9px}}
+@media(prefers-reduced-motion:reduce){.hero-art-trigger::after{transition:none}}
+/* ===============================================================
+   2026-10-18 · Accessibility-led typography pass
+   Text is intentionally comparable to standard browser UI text.
+   Retains the existing editorial palette, imagery and lightbox.
+   =============================================================== */
+:root {
+  --type-body: 1.125rem;       /* 18 px at normal browser zoom */
+  --type-ui: 1rem;             /* 16 px navigation, buttons, links */
+  --type-support: .9375rem;   /* 15 px supporting explanations */
+  --type-label: .875rem;      /* 14 px captions and small labels */
+}
+body {font-size:var(--type-body);line-height:1.64;}
+
+/* Navigation must be read without zooming in. */
+.brand-title {font-size:1.375rem;line-height:1.12;}
+.brand-small {font-size:1rem;}
+.header-inner {min-height:88px;gap:20px;}
+.main-nav {gap:18px;}
+.nav-link {font-size:var(--type-support);line-height:1.4;letter-spacing:.015em;padding:12px 0;}
+.lang-link {font-size:var(--type-support);line-height:1.4;padding:10px 12px;}
+.menu-btn {font-size:var(--type-ui);min-height:44px;padding:10px 14px;}
+
+/* Restrain editorial display type; body copy should not look microscopic beside it. */
+.hero h1 {font-size:clamp(3.1rem,5.3vw,5.4rem);line-height:1.02;letter-spacing:-.035em;}
+.page-hero h1 {font-size:clamp(3rem,5.1vw,5.25rem);line-height:1.04;letter-spacing:-.032em;}
+.section-title {font-size:clamp(2.25rem,3.6vw,3.65rem);line-height:1.1;letter-spacing:-.027em;}
+.section-lead {font-size:1.25rem;line-height:1.64;}
+.lead {font-size:clamp(1.25rem,1.7vw,1.5rem);line-height:1.6;}
+.subsection h2 {font-size:clamp(1.75rem,2.5vw,2.35rem);line-height:1.18;}
+.subsection h3 {font-size:1.6rem;line-height:1.2;}
+.row-detail h3 {font-size:1.65rem;line-height:1.22;}
+.story-card h3 {font-size:clamp(1.7rem,2.2vw,2.1rem);line-height:1.16;}
+
+/* Previously 10–12 px at browser defaults: set a proper reading floor. */
+.kicker,.eyebrow,.mini-meta,.chapter-num,.tag,.figure-num,.number {font-size:var(--type-label);line-height:1.5;letter-spacing:.045em;}
+.picture-caption,.caption {font-size:var(--type-label);line-height:1.6;}
+.button,.page-jump a,.story-card a,.inline-links,.footer-list,.hero-lightbox-original {font-size:var(--type-ui);line-height:1.4;letter-spacing:0;}
+.button {min-height:48px;padding:14px 19px;gap:14px;}
+.page-jump a {min-height:44px;display:inline-flex;align-items:center;padding:10px 15px;}
+.story-card {min-height:300px;padding:26px;}
+.story-card p {font-size:1.0625rem;line-height:1.62;}
+.story-card a {padding-top:16px;min-height:44px;display:flex;align-items:center;}
+.indexband span,.stat span,.footer-meta,.small-note,.row-detail small,.flowitem small,.quote figcaption,.fact p,.mech-step p,.stat-foot,.footer em {font-size:var(--type-support);line-height:1.6;}
+.indexband strong {font-size:1.55rem;line-height:1.2;}
+.indexband span {margin-top:9px;}
+.fact p,.mech-step p {font-size:1.0625rem;}
+.fact .number {font-size:clamp(2.8rem,4.5vw,4.25rem);}
+.stat strong {font-size:clamp(3.2rem,5.7vw,5.2rem);}
+.footer-meta {font-size:var(--type-label);line-height:1.6;}
+.footer-list {gap:13px;}
+.footer-list a {display:inline-block;padding:4px 0;}
+.table-wrap table {font-size:var(--type-support);line-height:1.55;}
+.table-wrap th {font-size:var(--type-label);letter-spacing:.015em;}
+details summary {font-size:1.45rem;line-height:1.4;}
+details p {font-size:1.0625rem;line-height:1.65;}
+.flowitem strong {font-size:1.7rem;}
+.hero-art-trigger::after {font-size:var(--type-label);line-height:1.4;padding:10px 12px;}
+.hero-lightbox-original {padding:8px 12px;min-height:44px;display:flex;align-items:center;justify-content:center;}
+
+/* Readable navigation must not be squeezed into a desktop-width menu. */
+@media (max-width:1100px) {
+  .container {width:min(var(--max),calc(100% - 48px));}
+  .header-inner {min-height:78px;flex-wrap:wrap;}
+  .menu-btn {display:block;margin-left:auto;}
+  .main-nav {display:none;width:100%;flex-wrap:wrap;gap:8px 18px;padding:0 0 18px;}
+  .main-nav.open {display:flex;}
+  .main-nav .nav-link {min-height:44px;display:inline-flex;align-items:center;padding:9px 5px;}
+  .lang-switch {margin-inline-start:auto;}
+  .hero {padding:72px 0;}
+}
+@media (max-width:690px) {
+  body {font-size:1.125rem;line-height:1.62;}
+  .container {width:calc(100% - 36px);}
+  .header-inner {min-height:74px;}
+  .brand-title {font-size:1.22rem;}
+  .brand-small {font-size:.9375rem;}
+  .main-nav {gap:4px 12px;}
+  .nav-link {font-size:var(--type-support);}
+  .hero {padding:52px 0;}
+  .hero h1 {font-size:clamp(2.9rem,12vw,4.65rem);line-height:1.02;}
+  .page-hero h1 {font-size:clamp(2.65rem,9vw,3.5rem);line-height:1.06;overflow-wrap:break-word;}
+  .section-title {font-size:clamp(2.15rem,8vw,3.05rem);line-height:1.12;overflow-wrap:break-word;}
+  .lead {font-size:1.25rem;}
+  .section-lead {font-size:1.2rem;}
+  .story-card {min-height:0;padding:24px;}
+  .story-card h3 {font-size:1.85rem;}
+  .indexband strong {font-size:1.35rem;}
+  .actions .button {width:100%;}
+  .footer-meta {gap:10px;}
+  .hero-art-trigger::after {font-size:var(--type-label);}
+}
+@media (max-width:380px) {
+  .container {width:calc(100% - 28px);}
+  .brand-title {font-size:1.09rem;}
+  .brand-icon {width:25px;}
+  .main-nav {gap:3px 8px;}
+  .nav-link {font-size:.9rem;}
+  .lang-link {font-size:.9rem;padding:10px;}
+  .hero h1 {font-size:clamp(2.65rem,11vw,3.25rem);}
+  .page-hero h1 {font-size:clamp(2.4rem,9vw,3rem);}
+}
+
+/* Compact mobile menu control: keep the masthead on one row while preserving
+   the existing accessible button label and its JavaScript behaviour. */
+@media(max-width:690px) {
+  .header-inner{gap:12px;}
+  .menu-btn{font-size:0;width:48px;min-width:48px;height:44px;padding:0;display:flex;align-items:center;justify-content:center;line-height:1;}
+  .menu-btn::before{content:'☰';font:normal 1.5rem/1 Arial,sans-serif;}
+  .menu-btn[aria-expanded='true']::before{content:'×';font-size:1.9rem;}
+}
+@media(max-width:380px) {
+  .header-inner{gap:8px;}
+  .brand{gap:7px;}
+  .brand-title{font-size:.96rem;}
+}
